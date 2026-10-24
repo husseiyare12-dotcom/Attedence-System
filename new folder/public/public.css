@@ -507,4 +507,51 @@ body.dark-mode .lookup-details div, body.dark-mode .result-card, body.dark-mode 
 body.dark-mode .lookup-details strong, body.dark-mode .lookup-results h4, body.dark-mode .result-card-main h4, body.dark-mode .result-summary-grid strong { color: var(--dark-text); }
 body.dark-mode .lookup-details span, body.dark-mode .result-card-main p, body.dark-mode .result-summary-grid span, body.dark-mode .result-row { color: var(--dark-muted); }
 
+/* Contrast fixes for every page and component */
+body:not(.dark-mode) .auth-card,
+body:not(.dark-mode) .student-portal-header,
+body:not(.dark-mode) .student-nav,
+body:not(.dark-mode) .student-view,
+body:not(.dark-mode) .attendance-toolbar,
+body:not(.dark-mode) .admin-form,
+body:not(.dark-mode) .podium-item,
+body:not(.dark-mode) .student-lookup-result { color: var(--light-text); }
+body:not(.dark-mode) .auth-card h1,
+body:not(.dark-mode) .student-portal-header h1,
+body:not(.dark-mode) .student-view h2,
+body:not(.dark-mode) .student-view h3,
+body:not(.dark-mode) .podium-item h3,
+body:not(.dark-mode) .lookup-identity h3,
+body:not(.dark-mode) .lookup-results h4,
+body:not(.dark-mode) .admin-form h3,
+body:not(.dark-mode) .admin-lists h3 { color: #17213d; }
+body:not(.dark-mode) .student-nav,
+body:not(.dark-mode) .attendance-toolbar { background: rgba(255,255,255,.94); border-color: #e0e7f3; }
+body:not(.dark-mode) .student-nav button { color: #3157a7; background: #eef4ff; border-color: #d9e4fb; }
+body:not(.dark-mode) .student-nav button.active { color: #fff; background: linear-gradient(115deg, #4f7df3, #7257d9); }
+body:not(.dark-mode) .admin-form { background: #fbfcff; border-color: #e3e9f3; }
+body:not(.dark-mode) .podium-item { background: linear-gradient(145deg, #ffffff, #f2f6ff); }
+body:not(.dark-mode) .podium-item p, body:not(.dark-mode) .empty-state, body:not(.dark-mode) .student-extras ul { color: #52627e; }
+body:not(.dark-mode) .back-link, body:not(.dark-mode) .auth-card a { color: #2459c5; }
+body:not(.dark-mode) .student-finance div, body:not(.dark-mode) .lookup-details div { color: #17213d; background: #f8fbff; border-color: #dce5f3; }
+
+body.dark-mode .auth-page { background: radial-gradient(circle at 10% 10%, #263d77 0, transparent 34%), #0b1220; }
+body.dark-mode .auth-card h1,
+body.dark-mode .student-portal-header h1,
+body.dark-mode .student-view h2,
+body.dark-mode .student-view h3,
+body.dark-mode .podium-item h3,
+body.dark-mode .lookup-identity h3,
+body.dark-mode .lookup-results h4,
+body.dark-mode .admin-form h3,
+body.dark-mode .admin-lists h3 { color: var(--dark-text); }
+body.dark-mode .student-nav, body.dark-mode .attendance-toolbar { background: rgba(21,31,53,.94); border-color: var(--dark-border); }
+body.dark-mode .student-nav button { color: #d8e4fb; background: #233453; border-color: #3d527a; }
+body.dark-mode .student-nav button.active { color: #fff; background: linear-gradient(115deg, #4f7df3, #7257d9); }
+body.dark-mode .admin-form, body.dark-mode .podium-item, body.dark-mode .student-lookup-result { background: linear-gradient(145deg, #182641, #202c49); border-color: var(--dark-border); }
+body.dark-mode .podium-item p, body.dark-mode .empty-state, body.dark-mode .student-extras ul { color: var(--dark-muted); }
+body.dark-mode .back-link, body.dark-mode .auth-card a { color: #9dbbff; }
+body.dark-mode .student-finance div, body.dark-mode .lookup-details div { color: var(--dark-text); background: #1b2945; border-color: #3a4d70; }
+body.dark-mode .payment-notice, body.dark-mode .results-locked { color: #fed7aa; background: linear-gradient(135deg, #422516, #3b2b18); border-color: #8b5e2b; }
+
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
