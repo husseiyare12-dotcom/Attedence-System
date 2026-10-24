@@ -640,4 +640,26 @@ body.dark-mode.student-page .student-finance div { color: #edf4ff; background: #
 body.dark-mode.student-page .student-finance span { color: #a9b8d2; }
 body.dark-mode.student-page .student-extras li { color: #dbe6f8; }
 
+/* Premium light mode: white canvas with soft color depth */
+body:not(.dark-mode) main { background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%); }
+body:not(.dark-mode) header { padding-bottom: 22px; border-bottom: 1px solid #edf1f8; }
+body:not(.dark-mode) header h1 { text-shadow: 0 8px 24px #526fd01c; }
+body:not(.dark-mode) .card { background: linear-gradient(145deg, #ffffff 0%, #f6f9ff 100%); box-shadow: 0 12px 32px #314b8312; }
+body:not(.dark-mode) .card:nth-child(1) { background: linear-gradient(145deg, #ffffff, #eef4ff); }
+body:not(.dark-mode) .card:nth-child(2) { background: linear-gradient(145deg, #ffffff, #edfcf7); }
+body:not(.dark-mode) .card:nth-child(3) { background: linear-gradient(145deg, #ffffff, #fff3f3); }
+body:not(.dark-mode) .card:nth-child(4) { background: linear-gradient(145deg, #ffffff, #f4efff); }
+body:not(.dark-mode) .panel { background: rgba(255,255,255,.96); box-shadow: 0 14px 38px #314b8310; }
+body:not(.dark-mode) .panel h2 { color: #17213d; }
+body:not(.dark-mode) .finance-card { background: linear-gradient(145deg, #ffffff, #f7f9ff); }
+body:not(.dark-mode) .top-students-panel { background: linear-gradient(145deg, #ffffff, #f7f4ff); }
+body:not(.dark-mode) .student-nav { box-shadow: 0 12px 28px #314b8310; }
+body:not(.dark-mode) .student-portal-header { background: linear-gradient(120deg, #ffffff, #f4f7ff); box-shadow: 0 16px 38px #314b8314; }
+body:not(.dark-mode) .student-portal-header h1 { background: linear-gradient(110deg, #17213d, #4f7df3 55%, #7257d9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body:not(.dark-mode) .student-view { background: linear-gradient(145deg, #ffffff, #f8faff); box-shadow: 0 14px 34px #314b8310; }
+body:not(.dark-mode) .lookup-card { box-shadow: 0 14px 34px #314b8310; }
+body:not(.dark-mode) .attendance-toolbar { box-shadow: 0 12px 28px #314b8310; }
+body:not(.dark-mode) .auth-card { background: linear-gradient(145deg, #ffffff, #f5f8ff); box-shadow: 0 24px 65px #314b8320; }
+body:not(.dark-mode) .theme-toggle { box-shadow: 0 8px 20px #314b8318; }
+
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
