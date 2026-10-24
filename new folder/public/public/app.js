@@ -1,28 +1,6 @@
 let students = [];
 const attendance = {};
 
-function applyTheme(theme) {
-    const isDark = theme === "dark";
-    document.body.classList.toggle("dark-mode", isDark);
-    const toggle = document.getElementById("themeToggle");
-    const icon = document.getElementById("themeIcon");
-    const label = document.getElementById("themeLabel");
-    if (toggle) {
-        toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-        toggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
-    }
-    if (icon) icon.textContent = isDark ? "☀" : "☾";
-    if (label) label.textContent = isDark ? "Light mode" : "Dark mode";
-}
-
-const savedTheme = localStorage.getItem("attendance-theme");
-applyTheme(savedTheme === "dark" ? "dark" : "light");
-document.getElementById("themeToggle")?.addEventListener("click", () => {
-    const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
-    localStorage.setItem("attendance-theme", nextTheme);
-    applyTheme(nextTheme);
-});
-
 const form = document.getElementById("studentForm");
 const table = document.getElementById("studentTable");
 
