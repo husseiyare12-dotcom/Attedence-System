@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1792831480478",
+    "studentId": "c624902832",
+    "date": "2026-02-23",
+    "status": "Absent"
+  },
+  {
+    "id": "1792860789934",
+    "studentId": "c624902832",
+    "date": "2026-03-22",
+    "status": "Present"
+  },
+  {
+    "id": "1792860843327",
+    "studentId": "c624902832",
+    "date": "2026-10-24",
+    "status": "Present"
+  },
+  {
+    "id": "1792860845820",
+    "studentId": "c7483744",
+    "date": "2026-10-24",
+    "status": "Present"
+  },
+  {
+    "id": "1792861994790",
+    "studentId": "c6240314",
+    "date": "2026-04-22",
+    "status": "Present"
+  }
+]

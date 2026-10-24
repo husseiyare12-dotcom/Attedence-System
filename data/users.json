@@ -1,0 +1,73 @@
+[
+  {
+    "id": "1792832259704",
+    "name": "hussein",
+    "email": "husseiyare12@gmail.com",
+    "role": "teacher",
+    "studentId": "",
+    "passwordHash": "$2b$12$bZHA2HkuLtYOPE/dWBbQk.IbkWMItg4tIaggp2fzv6FT6.na8cmRG",
+    "createdAt": "2026-10-24T08:57:40.170Z"
+  },
+  {
+    "id": "1792832488679",
+    "name": "System Admin",
+    "email": "admin@school.local",
+    "role": "admin",
+    "passwordHash": "$2b$12$qMJxNmyhWfI2F7HDG9/nju9dGhx1V7QrKXsKB3EvAd/UvAnmandXO",
+    "createdAt": "2026-10-24T09:01:29.013Z"
+  },
+  {
+    "id": "1792832691888",
+    "name": "husseinadmin@example.com",
+    "email": "husseinadmin@example.com",
+    "role": "student",
+    "studentId": "",
+    "passwordHash": "$2b$12$yaeIZOO.7OpT88ipd4nEse.4/5EtHE8gsYrkRNiDfC61iJmHkKubG",
+    "createdAt": "2026-10-24T09:04:52.419Z"
+  },
+  {
+    "id": "1792849388428",
+    "name": "faiza adbi omar",
+    "email": "admin@school.local",
+    "role": "student",
+    "studentId": "c6240315",
+    "passwordHash": "$2b$12$XZUuNA28KmFZdSXeKJ4DzebXtHm79apiHZLMfRF0NpwlOPfcHYi8e",
+    "createdAt": "2026-10-24T13:43:09.188Z"
+  },
+  {
+    "id": "1792849434188",
+    "name": "faiza adbi omar",
+    "email": "faiza12@gmail.com",
+    "role": "student",
+    "studentId": "c6240315",
+    "passwordHash": "$2b$12$KtzBdkXQ2obiMfQ4SO9UHeJP5tsnS.hg4yvZl6m59pp/7rGUjL9BO",
+    "createdAt": "2026-10-24T13:43:54.827Z"
+  },
+  {
+    "id": "1792849461815",
+    "name": "faiza adbi omar",
+    "email": "faiza@gmail.com",
+    "role": "student",
+    "studentId": "c6240315",
+    "passwordHash": "$2b$12$ALiDOadAuWOO1mMdAsMp0uJYGFwHdkCH8gVdxx9.QMC8j2UtkpKZi",
+    "createdAt": "2026-10-24T13:44:22.443Z"
+  },
+  {
+    "id": "1792858218804",
+    "name": "gelle",
+    "email": "macalin@gmail.com",
+    "role": "teacher",
+    "studentId": "",
+    "passwordHash": "$2b$12$bcg2mLGJFX49P1N4ayT/auqrd9EA1s/TPHPo.YFxQsnDpXpnR/RgC",
+    "createdAt": "2026-10-24T16:10:19.415Z"
+  },
+  {
+    "id": "1792858271962",
+    "name": "abdinasir axmed gellle",
+    "email": "abdinasir@gmail.com",
+    "role": "teacher",
+    "studentId": "",
+    "passwordHash": "$2b$12$fwtTTX9rlILhgL.coDeQxOLN4eDNdvPSfgv3l0eI/IB8ZR7XHIwfq",
+    "createdAt": "2026-10-24T16:11:12.517Z"
+  }
+]

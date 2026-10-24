@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+    <link rel="stylesheet" href="public.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Attendance</h2>
+        <a href="#dashboard">Dashboard</a>
+        <a href="/student.html">Students</a>
+        <a href="/attendance.html">Attendance</a>
+        <a href="/exams.html">Examinations</a>
+        <a href="/reports.html">Reports</a>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <h1>Dashboard</h1>
+                <p>Student Attendance Management System</p>
+            </div>
+            <a id="authLink" class="back-link" href="/login.html">Sign in</a>
+        </header>
+
+        <section class="cards" id="dashboard">
+            <div class="card">
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+            </div>
+            <div class="card">
+                <p>Present Today</p>
+                <h2 id="presentStudents">0</h2>
+            </div>
+            <div class="card">
+                <p>Absent Today</p>
+                <h2 id="absentStudents">0</h2>
+            </div>
+            <div class="card">
+                <p>Total Teachers</p>
+                <h2 id="totalTeachers">0</h2>
+            </div>
+        </section>
+
+        <section class="cards finance-cards" aria-label="Payment overview">
+            <div class="card finance-card"><p>Total fees due</p><h2 id="totalFeesDue">0 USD</h2><small>All registered students</small></div>
+            <div class="card finance-card"><p>Total paid</p><h2 id="totalFeesPaid">0 USD</h2><small>Payments received</small></div>
+            <div class="card finance-card finance-outstanding"><p>Outstanding balance</p><h2 id="totalOutstanding">0 USD</h2><small>Results remain locked until paid</small></div>
+        </section>
+
+        <section class="panel top-students-panel">
+            <div class="section-heading"><div><p class="eyebrow">Academic excellence</p><h2>Top 3 Students</h2></div><span>Updated from results</span></div>
+            <div id="topStudents" class="podium"><p class="empty-state">No exam results yet.</p></div>
+        </section>
+
+        <section class="panel" id="students">
+            <h2>Add Student</h2>
+            <form id="studentForm">
+                <input id="studentName" placeholder="Student full name" required>
+                <input id="studentId" placeholder="Student ID" required>
+                <input id="studentEmail" type="email" placeholder="Student email" required>
+                <input id="studentClass" placeholder="Class / Grade">
+                <input id="studentPhone" placeholder="Phone number">
+                <input id="studentBalance" type="number" min="0" placeholder="Balance due">
+                <input id="studentPaid" type="number" min="0" placeholder="Amount paid">
+                <input id="studentPhoto" type="file" accept="image/*">
+                <button type="submit">Add Student</button>
+            </form>
+            <p id="studentMessage" class="form-message"></p>
+            <form id="paymentForm" class="payment-form"><input id="paymentStudentId" placeholder="Student ID for payment" required><input id="paymentBalance" type="number" min="0" placeholder="Balance due" required><input id="paymentAmount" type="number" min="0" placeholder="Amount paid" required><button type="submit">Update payment</button></form>
+            <p id="paymentMessage" class="form-message"></p>
+        </section>
+
+        <section class="panel lookup-panel" id="studentLookup">
+            <div class="section-heading">
+                <div><p class="eyebrow">Quick student access</p><h2>Find complete student information</h2></div>
+                <span>Search by Student ID</span>
+            </div>
+            <form id="studentLookupForm" class="lookup-form">
+                <input id="lookupStudentId" placeholder="Enter Student ID" autocomplete="off" required>
+                <button type="submit">View student</button>
+            </form>
+            <p id="lookupMessage" class="form-message"></p>
+            <article id="lookupResult" class="student-lookup-result" hidden>
+                <div class="lookup-identity">
+                    <div class="lookup-avatar"><img id="lookupPhoto" alt="Student photo"></div>
+                    <div><p class="eyebrow">Student profile</p><h3 id="lookupName"></h3><p id="lookupMeta"></p></div>
+                </div>
+                <div class="lookup-details">
+                    <div><span>Student ID</span><strong id="lookupId"></strong></div>
+                    <div><span>Email</span><strong id="lookupEmail"></strong></div>
+                    <div><span>Phone</span><strong id="lookupPhone"></strong></div>
+                    <div><span>Class</span><strong id="lookupClass"></strong></div>
+                    <div><span>Attendance</span><strong id="lookupAttendance"></strong></div>
+                    <div><span>Exam average</span><strong id="lookupAverage"></strong></div>
+                    <div><span>Balance due</span><strong id="lookupBalance"></strong></div>
+                    <div><span>Amount paid</span><strong id="lookupPaid"></strong></div>
+                    <div><span>Remaining balance</span><strong id="lookupRemaining"></strong></div>
+                    <div><span>Payment status</span><strong id="lookupPaymentStatus"></strong></div>
+                </div>
+                <div class="lookup-results"><h4>Exam results</h4><div id="lookupExamResults"></div></div>
+            </article>
+        </section>
+
+        <section class="profile-card" id="profilePreview" hidden>
+            <div class="profile-avatar"><img id="profilePhoto" alt="Student photo"></div>
+            <div><p class="eyebrow">Latest student profile</p><h2 id="profileName"></h2><p id="profileInfo"></p></div>
+        </section>
+
+        <section class="panel" id="attendance">
+            <h2>Student List</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Attendance</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel" id="reports">
+            <h2>Attendance Summary</h2>
+            <p id="summary">No students added yet.</p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading"><h2>Notifications</h2><span>School updates</span></div>
+            <ul id="notificationList"><li class="empty-state">No notifications yet.</li></ul>
+        </section>
+
+        <section class="panel admin-management" id="adminManagement" hidden>
+            <div class="section-heading"><div><p class="eyebrow">Administration</p><h2>School setup</h2></div><span>Admin-only controls</span></div>
+            <div class="admin-forms">
+                <form id="teacherForm" class="admin-form"><h3>Add teacher</h3><input id="teacherName" placeholder="Teacher name" required><input id="teacherEmail" type="email" placeholder="Teacher email" required><input id="teacherPassword" type="password" minlength="8" placeholder="Temporary password" required><button type="submit">Create teacher</button></form>
+                <form id="classForm" class="admin-form"><h3>Add class</h3><input id="className" placeholder="e.g. Grade 8A" required><button type="submit">Create class</button></form>
+                <form id="subjectForm" class="admin-form"><h3>Add subject</h3><input id="subjectName" placeholder="e.g. Mathematics" required><button type="submit">Create subject</button></form>
+                <form id="notificationForm" class="admin-form"><h3>Publish announcement</h3><input id="notificationTitle" placeholder="Announcement title" required><textarea id="notificationText" placeholder="Write an important school update" required></textarea><button type="submit">Publish notification</button></form>
+            </div>
+            <p id="adminMessage" class="form-message"></p>
+            <div class="admin-lists"><div><h3>Teachers</h3><ul id="teacherList"><li class="empty-state">No teachers yet.</li></ul></div><div><h3>Classes &amp; subjects</h3><ul id="classSubjectList"><li class="empty-state">No classes or subjects yet.</li></ul></div></div>
+        </section>
+    </main>
+
+    <script src="public/app.js"></script>
+</body>
+</html>

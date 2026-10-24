@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: student-attendance-system
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /login.html
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true

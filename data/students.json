@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1792831014491",
+    "name": "ali",
+    "studentId": "c624902832",
+    "email": "husseinyare12@gmail.com"
+  },
+  {
+    "id": "1792859583763",
+    "name": "ali jimacale",
+    "studentId": "c7483744",
+    "email": "hdghsdb@gmail.com",
+    "className": "c43",
+    "phone": "343982232842",
+    "photo": "",
+    "balanceDue": 155,
+    "amountPaid": 155,
+    "paymentStatus": "paid"
+  },
+  {
+    "id": "1792861384654",
+    "name": "wali",
+    "studentId": "c6240314",
+    "email": "nayli@gmail.com",
+    "className": "c43",
+    "phone": "61728848343",
+    "photo": "",
+    "balanceDue": 0,
+    "amountPaid": 0,
+    "paymentStatus": "paid"
+  },
+  {
+    "id": "1792861519422",
+    "name": "faiza abd omar",
+    "studentId": "c6240315",
+    "email": "faiza@gmail.com",
+    "className": "c43",
+    "phone": "61728848343",
+    "photo": "",
+    "balanceDue": 0,
+    "amountPaid": 0,
+    "paymentStatus": "paid"
+  },
+  {
+    "id": "1792861872388",
+    "name": "farahali jimcale",
+    "studentId": "c62989922",
+    "email": "farah@gmail.com",
+    "className": "c7364233",
+    "phone": "618268722",
+    "photo": "",
+    "balanceDue": 0,
+    "amountPaid": 0,
+    "paymentStatus": "paid"
+  }
+]

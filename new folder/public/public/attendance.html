@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    <link rel="stylesheet" href="/public.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Attendance</h2>
+        <a href="/">Dashboard</a>
+        <a href="/student.html">Students</a>
+        <a href="/attendance.html" class="active-link">Attendance</a>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <p class="eyebrow">Daily register</p>
+                <h1>Attendance Management</h1>
+                <p>Choose a date and mark every student's attendance.</p>
+            </div>
+            <a class="back-link" href="/">Back to dashboard</a>
+        </header>
+
+        <section class="attendance-toolbar">
+            <label for="attendanceDate">Attendance date</label>
+            <input type="date" id="attendanceDate">
+            <input type="search" id="studentSearch" placeholder="Search student name or ID">
+            <button id="refreshButton" type="button">Refresh</button>
+        </section>
+
+        <section class="cards attendance-cards">
+            <div class="card"><p>Total students</p><h2 id="totalCount">0</h2></div>
+            <div class="card"><p>Present / Late</p><h2 id="presentCount">0</h2></div>
+            <div class="card"><p>Absent</p><h2 id="absentCount">0</h2></div>
+            <div class="card"><p>Not marked</p><h2 id="unmarkedCount">0</h2></div>
+        </section>
+
+        <section class="panel">
+            <p id="attendanceMessage" class="form-message"></p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Student</th><th>Student ID</th><th>Class</th><th>Status</th><th>Save</th></tr></thead>
+                    <tbody id="attendanceTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="attendance.js"></script>
+</body>
+</html>

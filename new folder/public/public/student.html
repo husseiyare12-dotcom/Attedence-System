@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Attendify</title>
+    <link rel="stylesheet" href="/public.css">
+</head>
+<body class="student-page">
+    <header class="student-portal-header">
+        <div><p class="eyebrow">Attendify portal</p><h1 id="portalTitle">Student Management</h1><p id="portalSubtitle">Manage student profiles and academic records.</p></div>
+        <a class="back-link" href="#logout" id="portalLogout">Logout</a>
+    </header>
+
+    <nav id="studentNav" class="student-nav" hidden aria-label="Student dashboard sections">
+        <button type="button" data-student-view="profile" class="active">Profile</button>
+        <button type="button" data-student-view="attendance">Attendance</button>
+        <button type="button" data-student-view="payment">Payment</button>
+        <button type="button" data-student-view="exams">Examinations</button>
+    </nav>
+
+    <form id="studentForm">
+        <input type="text" id="name" placeholder="Student Name" required>
+        <input type="text" id="studentId" placeholder="Student ID" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="className" placeholder="Class / Grade">
+        <input type="text" id="phone" placeholder="Phone number">
+        <input type="file" id="photo" accept="image/*">
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2 id="studentsListTitle">Students List</h2>
+    <ul id="studentsList"></ul>
+
+    <section class="lookup-card">
+        <h2>Find Student by ID</h2>
+        <form id="lookupForm">
+            <input type="text" id="lookupStudentId" placeholder="Enter student ID" required>
+            <button type="submit">Show full profile</button>
+        </form>
+    </section>
+
+    <section id="studentReport" hidden>
+        <h2>Student Report</h2>
+        <div id="profileView" class="student-view">
+            <div class="student-profile">
+                <img id="reportPhoto" alt="Student photo">
+                <div id="reportProfile"></div>
+            </div>
+            <div id="reportStudent"></div>
+        </div>
+        <div id="attendanceView" class="student-view" hidden>
+            <p id="attendancePercentage"></p>
+            <h3>Attendance history</h3>
+            <ul id="attendanceHistory"></ul>
+            <h3>Save Attendance</h3>
+            <form id="attendanceForm">
+                <input type="date" id="attendanceDate" required>
+                <select id="attendanceStatus" required>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Late">Late</option>
+                    <option value="Excused">Excused</option>
+                </select>
+                <button type="submit">Save Attendance</button>
+            </form>
+        </div>
+        <div id="paymentView" class="student-view" hidden>
+            <section class="student-finance" aria-label="Payment status">
+                <div><span>Balance due</span><strong id="reportBalanceDue">0 USD</strong></div>
+                <div><span>Amount paid</span><strong id="reportAmountPaid">0 USD</strong></div>
+                <div><span>Remaining</span><strong id="reportRemainingBalance">0 USD</strong></div>
+                <div><span>Status</span><strong id="reportPaymentStatus">Pending</strong></div>
+            </section>
+            <p id="resultsAccessNotice" class="payment-notice"></p>
+        </div>
+        <div id="examsView" class="student-view" hidden>
+            <h3>Exam results</h3>
+            <div id="resultsSummary"></div>
+            <ul id="resultsList"></ul>
+            <h3>Create / Update Exam Result</h3>
+            <form id="resultForm">
+                <input type="text" id="exam" placeholder="Exam name" required>
+                <input type="text" id="subject" placeholder="Subject" required>
+                <input type="number" id="marks" placeholder="Marks" min="0" required>
+                <input type="number" id="maximumMarks" placeholder="Maximum marks" min="1" required>
+                <button type="submit">Save Result</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="studentExtras" class="student-extras" hidden>
+        <div class="lookup-card"><h2>Exam timetable</h2><ul id="examSchedule"><li class="empty-state">No upcoming exams.</li></ul></div>
+        <div class="lookup-card"><h2>Notifications</h2><ul id="portalNotifications"><li class="empty-state">No notifications yet.</li></ul></div>
+    </section>
+
+    <script src="student.js"></script>
+</body>
+</html>

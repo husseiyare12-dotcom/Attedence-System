@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1792831447141",
+    "studentId": "c624902832",
+    "exam": "ali",
+    "subject": "english",
+    "marks": 89,
+    "maximumMarks": 89,
+    "percentage": 100,
+    "grade": "A"
+  },
+  {
+    "id": "1792859668808",
+    "studentId": "c624902832",
+    "exam": "final",
+    "subject": "english",
+    "marks": 90,
+    "maximumMarks": 90,
+    "percentage": 100,
+    "grade": "A"
+  },
+  {
+    "id": "1792861424925",
+    "studentId": "c6240314",
+    "exam": "final",
+    "subject": "english",
+    "marks": 59,
+    "maximumMarks": 60,
+    "percentage": 98.33,
+    "grade": "A"
+  },
+  {
+    "id": "1792861565061",
+    "studentId": "c6240315",
+    "exam": "final",
+    "subject": "english",
+    "marks": 78,
+    "maximumMarks": 100,
+    "percentage": 78,
+    "grade": "B"
+  }
+]
