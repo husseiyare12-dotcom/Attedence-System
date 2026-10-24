@@ -607,4 +607,37 @@ body:not(.dark-mode) main::before { background: linear-gradient(115deg, #ffffff,
 body:not(.dark-mode).student-page { background: #ffffff !important; }
 body:not(.dark-mode).auth-page { background: #ffffff !important; }
 
+/* Student portal readability in both themes */
+body.student-page { color: #17213d; }
+body:not(.dark-mode).student-page > h1,
+body:not(.dark-mode).student-page > h2,
+body:not(.dark-mode).student-page #studentsListTitle { color: #17213d; }
+body:not(.dark-mode).student-page #studentForm { color: #edf4ff; background: linear-gradient(135deg, #172554, #3157a7); }
+body:not(.dark-mode).student-page #studentForm input { color: #17213d; background: #fff; border-color: #d5e0f1; }
+body:not(.dark-mode).student-page #studentsList li { color: #17213d; background: #fff; border-color: #dfe7f2; }
+body:not(.dark-mode).student-page .lookup-card,
+body:not(.dark-mode).student-page .student-extras .lookup-card { color: #17213d; background: linear-gradient(145deg, #fff, #f3f7ff); border-color: #dce6f4; }
+body:not(.dark-mode).student-page .lookup-card h2,
+body:not(.dark-mode).student-page .student-extras h2 { color: #17213d; }
+body:not(.dark-mode).student-page .student-nav { color: #3157a7; }
+body:not(.dark-mode).student-page .student-view { color: #334155; }
+body:not(.dark-mode).student-page .student-finance div { color: #17213d; background: #f8fbff; border-color: #dce5f3; }
+body:not(.dark-mode).student-page .student-finance span { color: #71809c; }
+
+body.dark-mode.student-page { color: #edf4ff; }
+body.dark-mode.student-page > h1,
+body.dark-mode.student-page > h2,
+body.dark-mode.student-page #studentsListTitle { color: #f8fbff; }
+body.dark-mode.student-page #studentForm { color: #edf4ff; background: linear-gradient(135deg, #172c5b, #3d2d78); border: 1px solid #40557d; }
+body.dark-mode.student-page #studentForm input { color: #edf4ff; background: #101a2d; border-color: #40557d; }
+body.dark-mode.student-page #studentsList li { color: #edf4ff; background: #172640; border-color: #3a4d70; }
+body.dark-mode.student-page .lookup-card,
+body.dark-mode.student-page .student-extras .lookup-card { color: #edf4ff; background: linear-gradient(145deg, #151f35, #1f2f50); border-color: #40557d; }
+body.dark-mode.student-page .lookup-card h2,
+body.dark-mode.student-page .student-extras h2 { color: #f8fbff; }
+body.dark-mode.student-page .student-view { color: #dbe6f8; }
+body.dark-mode.student-page .student-finance div { color: #edf4ff; background: #1b2945; border-color: #40557d; }
+body.dark-mode.student-page .student-finance span { color: #a9b8d2; }
+body.dark-mode.student-page .student-extras li { color: #dbe6f8; }
+
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
