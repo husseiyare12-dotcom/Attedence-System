@@ -452,3 +452,59 @@ th { background: #f8faff; color: #71809c; font-size: 11px; text-transform: upper
     .podium { grid-template-columns: 1fr; }
     .rank-1 { transform: none; }
 }
+
+/* Final visual system: polished light and dark themes */
+:root {
+    --light-bg: #f5f7fb;
+    --light-surface: rgba(255, 255, 255, .92);
+    --light-border: #e4eaf4;
+    --light-text: #17213d;
+    --light-muted: #71809c;
+    --accent-blue: #4f7df3;
+    --accent-violet: #7257d9;
+    --accent-cyan: #12b8c9;
+    --dark-bg: #0b1220;
+    --dark-surface: rgba(21, 31, 53, .94);
+    --dark-surface-soft: #1b2945;
+    --dark-border: #2d3e60;
+    --dark-text: #f4f7ff;
+    --dark-muted: #a9b8d2;
+}
+
+body { background: radial-gradient(circle at 92% -10%, #dce8ff 0, transparent 28%), linear-gradient(135deg, var(--light-bg), #eef2fb); color: var(--light-text); transition: background .35s ease, color .35s ease; }
+main { position: relative; }
+main::before { content: ""; position: absolute; inset: 0 0 auto; height: 210px; pointer-events: none; background: linear-gradient(115deg, #ffffffb8, transparent 62%); z-index: -1; }
+.sidebar { background: linear-gradient(180deg, #111c3b 0%, #1b2d64 56%, #3d2b78 100%); box-shadow: 10px 0 40px #17255420; }
+.sidebar h2 { letter-spacing: -.04em; text-shadow: 0 2px 16px #90b4ff33; }
+.sidebar a { border: 1px solid transparent; transition: background .25s ease, transform .25s ease, border-color .25s ease; }
+.sidebar a:hover, .sidebar a.active-link { background: linear-gradient(100deg, #4778ed, #6957ce); border-color: #9fbaff44; transform: translateX(3px); }
+header h1 { background: linear-gradient(110deg, #17213d, #456dd2 58%, #7257d9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.card, .panel, .profile-card, .lookup-card, #studentReport { background: var(--light-surface); border-color: var(--light-border); backdrop-filter: blur(12px); transition: background .35s ease, border-color .35s ease, box-shadow .25s ease, transform .25s ease; }
+.card:hover, .panel:hover { box-shadow: 0 20px 48px #263b7018; }
+.card h2 { background: linear-gradient(120deg, var(--accent-blue), var(--accent-violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+button { background: linear-gradient(115deg, var(--accent-blue), var(--accent-violet)); border: 1px solid #ffffff22; box-shadow: 0 10px 22px #4f7df33b; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+button:hover { filter: brightness(1.08); box-shadow: 0 14px 28px #4f7df344; }
+.theme-toggle { background: linear-gradient(115deg, #ffffff, #eef3ff); color: #30436e; border-color: #dce5f4; }
+.theme-toggle:hover { background: linear-gradient(115deg, #eef4ff, #e8e2ff); }
+input, select, textarea { background: #fbfcff; border-color: #dce5f1; transition: background .3s ease, border-color .2s ease, box-shadow .2s ease; }
+input:focus, select:focus, textarea:focus { border-color: #6d8ff2; box-shadow: 0 0 0 4px #6d8ff21c, 0 8px 18px #456dd214; }
+th { background: linear-gradient(110deg, #f2f6ff, #f7f5ff); }
+
+body.dark-mode { background: radial-gradient(circle at 92% -10%, #263d77 0, transparent 30%), linear-gradient(135deg, var(--dark-bg), #111a2e 70%, #1b1640); color: var(--dark-text); }
+body.dark-mode main::before { background: linear-gradient(115deg, #25365b55, transparent 62%); }
+body.dark-mode header h1 { background: linear-gradient(110deg, #ffffff, #9dbbff 55%, #c3a8ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.dark-mode .card, body.dark-mode .panel, body.dark-mode .profile-card, body.dark-mode .lookup-card, body.dark-mode #studentReport, body.dark-mode .auth-card, body.dark-mode .student-portal-header { background: var(--dark-surface); border-color: var(--dark-border); box-shadow: 0 20px 48px #02061766; }
+body.dark-mode .card h2 { background: linear-gradient(120deg, #8db0ff, #c1a7ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.dark-mode header p, body.dark-mode .card p, body.dark-mode .panel span, body.dark-mode .panel small, body.dark-mode .panel label, body.dark-mode .student-portal-header p { color: var(--dark-muted); }
+body.dark-mode .theme-toggle { background: linear-gradient(115deg, #263b62, #34295f); color: #f4f7ff; border-color: #52658d; box-shadow: 0 8px 22px #02061766; }
+body.dark-mode .theme-toggle:hover { background: linear-gradient(115deg, #304b7b, #473a7d); }
+body.dark-mode input, body.dark-mode select, body.dark-mode textarea { color: var(--dark-text); background: #101a2d; border-color: #3b4f76; }
+body.dark-mode input::placeholder, body.dark-mode textarea::placeholder { color: #8090ae; }
+body.dark-mode th { color: #b9c8e3; background: linear-gradient(110deg, #1e2d4a, #292343); }
+body.dark-mode th, body.dark-mode td { border-color: #30415f; }
+body.dark-mode td { color: #dce6f8; }
+body.dark-mode .lookup-details div, body.dark-mode .result-card, body.dark-mode .result-summary-grid div { background: var(--dark-surface-soft) !important; border-color: #3a4d70 !important; }
+body.dark-mode .lookup-details strong, body.dark-mode .lookup-results h4, body.dark-mode .result-card-main h4, body.dark-mode .result-summary-grid strong { color: var(--dark-text); }
+body.dark-mode .lookup-details span, body.dark-mode .result-card-main p, body.dark-mode .result-summary-grid span, body.dark-mode .result-row { color: var(--dark-muted); }
+
+@media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
