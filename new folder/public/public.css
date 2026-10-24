@@ -566,5 +566,10 @@ body.dark-mode #attendanceHistory li, body.dark-mode #resultsList li { color: #d
 body.dark-mode #reportProfile { color: #edf4ff; }
 body.dark-mode #reportTable td { color: #dbe6f8; background: #17213a; }
 body.dark-mode #reportTable tr:hover td { background: #223352; }
+body.dark-mode #studentReport > h2 { color: #f8fbff; }
+body.dark-mode #studentReport .student-view { color: #e9f0ff; background: linear-gradient(145deg, #151f35, #1b2945); border-color: #3a4d70; box-shadow: 0 18px 42px #02061766; }
+body.dark-mode #studentReport #profileView { background: transparent; border-color: transparent; box-shadow: none; }
+body.dark-mode #studentReport .student-profile { color: #fff; background: linear-gradient(135deg, #172c5b, #3d2d78); }
+body.dark-mode #studentReport .student-view h3 { color: #f2f6ff; }
 
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
