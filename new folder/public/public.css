@@ -582,4 +582,23 @@ body.dark-mode #lookupResult .lookup-details div:nth-child(7) strong, body.dark-
 body.dark-mode #lookupResult .result-row { color: #c6d4ed; border-bottom-color: #40557d; }
 body.dark-mode #lookupResult .result-row strong { color: #fff; }
 
+/* Student list: stable table layout in light, dark and mobile views */
+#attendance { overflow: hidden; }
+#attendance h2 { margin-top: 0; }
+#attendance .table-wrap { max-height: 500px; overflow: auto; border: 1px solid #e1e8f3; border-radius: 14px; background: #fff; }
+#attendance table { min-width: 640px; margin: 0; }
+#attendance thead th { position: sticky; top: 0; z-index: 1; }
+#studentTable tr { transition: background .2s ease; }
+#studentTable tr:hover td { background: #f5f8ff; }
+#studentTable td { vertical-align: middle; }
+#studentTable td:first-child { color: #315fc5; font-weight: 800; }
+#studentTable select { min-width: 130px; color: #243454; background: #fff; }
+#studentTable:empty::after { content: "No students found yet."; display: block; padding: 24px; color: #71809c; }
+body.dark-mode #attendance .table-wrap { border-color: #3a4d70; background: #151f35; }
+body.dark-mode #studentTable tr:hover td { background: #223352; }
+body.dark-mode #studentTable td:first-child { color: #9dbbff; }
+body.dark-mode #studentTable select { color: #edf4ff; background: #101a2d; border-color: #48618f; }
+body.dark-mode #studentTable:empty::after { color: #a9b8d2; }
+@media (max-width: 700px) { #attendance .table-wrap { max-height: none; } #attendance table { min-width: 590px; } }
+
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
