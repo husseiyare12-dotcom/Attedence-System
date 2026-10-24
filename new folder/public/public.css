@@ -601,4 +601,10 @@ body.dark-mode #studentTable select { color: #edf4ff; background: #101a2d; borde
 body.dark-mode #studentTable:empty::after { color: #a9b8d2; }
 @media (max-width: 700px) { #attendance .table-wrap { max-height: none; } #attendance table { min-width: 590px; } }
 
+/* Clean white light-mode canvas */
+body:not(.dark-mode) { background: #ffffff !important; }
+body:not(.dark-mode) main::before { background: linear-gradient(115deg, #ffffff, #f8faff 72%, transparent); }
+body:not(.dark-mode).student-page { background: #ffffff !important; }
+body:not(.dark-mode).auth-page { background: #ffffff !important; }
+
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
