@@ -571,5 +571,15 @@ body.dark-mode #studentReport .student-view { color: #e9f0ff; background: linear
 body.dark-mode #studentReport #profileView { background: transparent; border-color: transparent; box-shadow: none; }
 body.dark-mode #studentReport .student-profile { color: #fff; background: linear-gradient(135deg, #172c5b, #3d2d78); }
 body.dark-mode #studentReport .student-view h3 { color: #f2f6ff; }
+body.dark-mode #lookupResult { color: #edf4ff; background: linear-gradient(145deg, #151f35, #1f2f50); border-color: #40557d; box-shadow: 0 20px 46px #02061777; }
+body.dark-mode #lookupResult .lookup-identity { border-bottom-color: #40557d; }
+body.dark-mode #lookupResult .lookup-identity h3, body.dark-mode #lookupResult .lookup-results h4 { color: #f8fbff; }
+body.dark-mode #lookupResult .lookup-identity p { color: #b8c7e2; }
+body.dark-mode #lookupResult .lookup-details div { background: #1a2945; border-color: #40557d; }
+body.dark-mode #lookupResult .lookup-details span { color: #a9b8d2; }
+body.dark-mode #lookupResult .lookup-details strong { color: #f1f6ff; }
+body.dark-mode #lookupResult .lookup-details div:nth-child(7) strong, body.dark-mode #lookupResult .lookup-details div:nth-child(8) strong, body.dark-mode #lookupResult .lookup-details div:nth-child(9) strong { color: #9dbbff; }
+body.dark-mode #lookupResult .result-row { color: #c6d4ed; border-bottom-color: #40557d; }
+body.dark-mode #lookupResult .result-row strong { color: #fff; }
 
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
