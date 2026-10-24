@@ -553,5 +553,18 @@ body.dark-mode .podium-item p, body.dark-mode .empty-state, body.dark-mode .stud
 body.dark-mode .back-link, body.dark-mode .auth-card a { color: #9dbbff; }
 body.dark-mode .student-finance div, body.dark-mode .lookup-details div { color: var(--dark-text); background: #1b2945; border-color: #3a4d70; }
 body.dark-mode .payment-notice, body.dark-mode .results-locked { color: #fed7aa; background: linear-gradient(135deg, #422516, #3b2b18); border-color: #8b5e2b; }
+body:not(.dark-mode) #reportStudent { color: #475569; background: #ffffffc9; border: 1px solid #e1e8f4; border-radius: 14px; }
+body:not(.dark-mode) #attendancePercentage { color: #087f5b; background: #e7f8f1; }
+body:not(.dark-mode) #resultsSummary { color: #8a6500; background: #fff7df; }
+body:not(.dark-mode) #attendanceHistory li, body:not(.dark-mode) #resultsList li { color: #334155; background: #fff; border-color: #e2e8f0; }
+body:not(.dark-mode) #reportProfile { color: #dbeafe; }
+body:not(.dark-mode) #reportTable td { color: #334155; background: #fff; }
+body.dark-mode #reportStudent { color: #c6d4ed; background: #1b2945; border: 1px solid #3a4d70; }
+body.dark-mode #attendancePercentage { color: #86efac; background: #123b32; }
+body.dark-mode #resultsSummary { color: #fde68a; background: #3a2d13; }
+body.dark-mode #attendanceHistory li, body.dark-mode #resultsList li { color: #dbe6f8; background: #172640; border-color: #3a4d70; }
+body.dark-mode #reportProfile { color: #edf4ff; }
+body.dark-mode #reportTable td { color: #dbe6f8; background: #17213a; }
+body.dark-mode #reportTable tr:hover td { background: #223352; }
 
 @media (prefers-reduced-motion: no-preference) { .theme-toggle { animation: softFloat 4s ease-in-out infinite; } @keyframes softFloat { 50% { transform: translateY(-2px); } } }
