@@ -734,6 +734,57 @@ button.button-clicked { animation: buttonClick .42s ease both; }
 body.dark-mode button::before { background: linear-gradient(90deg, transparent, #dbe7ff44, transparent); }
 @media (prefers-reduced-motion: reduce) { button, button::before, button.button-clicked { animation: none !important; transition: none !important; } }
 
+/* Brand palette: Coral, Deep Purple, Mauve and Soft Blush */
+:root { --brand-coral: #F1916D; --brand-purple: #473E66; --brand-mauve: #BD83B8; --brand-blush: #F5D7DB; }
+body:not(.dark-mode) { background: linear-gradient(145deg, #ffffff, #fff8f9 72%, var(--brand-blush)) !important; }
+body:not(.dark-mode) main { background: linear-gradient(180deg, #ffffff, #fffafb); }
+body:not(.dark-mode) header h1 { background: linear-gradient(110deg, var(--brand-purple), var(--brand-mauve) 58%, var(--brand-coral)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sidebar { background: linear-gradient(180deg, var(--brand-purple), #5b4d7d 56%, var(--brand-mauve)); }
+.sidebar a:hover, .sidebar a.active-link { background: linear-gradient(100deg, var(--brand-purple), var(--brand-mauve)); border-color: #f5d7db55; }
+.sidebar a { color: #fcecef; }
+.eyebrow { color: var(--brand-mauve) !important; }
+button { background: linear-gradient(115deg, var(--brand-coral), var(--brand-mauve)); box-shadow: 0 10px 22px #bd83b844; }
+button:hover { background: linear-gradient(115deg, #e9825e, var(--brand-purple)); box-shadow: 0 14px 28px #bd83b855; }
+.back-link, .auth-card a { color: var(--brand-purple); }
+.card h2 { background: linear-gradient(120deg, var(--brand-purple), var(--brand-mauve)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cards .card:nth-child(1) { border-top-color: var(--brand-coral); }
+.cards .card:nth-child(2) { border-top-color: var(--brand-mauve); }
+.cards .card:nth-child(3) { border-top-color: var(--brand-purple); }
+.cards .card:nth-child(4) { border-top-color: var(--brand-blush); }
+.theme-toggle { color: var(--brand-purple); background: linear-gradient(115deg, #fff, var(--brand-blush)); border-color: #bd83b866; }
+.theme-toggle:hover { color: #fff; background: linear-gradient(115deg, var(--brand-purple), var(--brand-mauve)); }
+.animated-topbar { color: var(--brand-purple); border-color: #bd83b866; background: linear-gradient(100deg, #fff4f4, var(--brand-blush), #f8eff8); }
+.motion-spark { background: linear-gradient(135deg, var(--brand-coral), var(--brand-purple)); }
+.student-list-avatar { background: linear-gradient(135deg, var(--brand-coral), var(--brand-mauve)); box-shadow: 0 8px 16px #bd83b844; }
+.student-list-details span { color: var(--brand-mauve); }
+.student-nav button.active, .student-nav button:hover { background: linear-gradient(115deg, var(--brand-coral), var(--brand-mauve)); }
+.student-nav button { color: var(--brand-purple); background: #fff1f4; border-color: #bd83b866; }
+.student-portal-header { border-color: #bd83b855; background: linear-gradient(115deg, #fff, #fff2f4 65%, #f8eff8); }
+.student-portal-header h1 { background: linear-gradient(110deg, var(--brand-purple), var(--brand-mauve), var(--brand-coral)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.student-page > form:first-of-type { background: linear-gradient(120deg, var(--brand-purple), #5b4d7d 58%, var(--brand-mauve)) !important; border-color: #f1916d88; }
+.student-page .lookup-card { background: linear-gradient(135deg, #fff, var(--brand-blush), #f8eff8); border-color: #bd83b855; }
+body:has(#attendancePercentage) #attendancePercentage { background: conic-gradient(var(--brand-coral) var(--attendance-progress, 0%), var(--brand-blush) 0); }
+body:has(#attendancePercentage) #attendancePercentage::after { color: var(--brand-purple); }
+.grade-a { color: var(--brand-purple); background: #f5d7db; }
+.grade-b { color: var(--brand-purple); background: #ead8ec; }
+.results-locked, .payment-notice { color: var(--brand-purple); background: linear-gradient(135deg, #fff0f1, var(--brand-blush)); border-color: #f1916d88; }
+body.dark-mode { background: radial-gradient(circle at 92% -10%, #5b4d7d 0, transparent 30%), linear-gradient(145deg, #241f36, var(--brand-purple) 72%, #2b2037); }
+body.dark-mode .sidebar { background: linear-gradient(180deg, #302747, var(--brand-purple) 58%, #684a70); }
+body.dark-mode header h1 { background: linear-gradient(110deg, #fff, var(--brand-blush) 56%, var(--brand-coral)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.dark-mode button { background: linear-gradient(115deg, var(--brand-coral), var(--brand-mauve)); }
+body.dark-mode .theme-toggle { color: #fff; background: linear-gradient(115deg, var(--brand-purple), #684a70); border-color: #bd83b888; }
+body.dark-mode .animated-topbar { color: var(--brand-blush); background: linear-gradient(100deg, #302747, var(--brand-purple), #684a70); border-color: #bd83b888; }
+body.dark-mode .student-nav button.active, body.dark-mode .student-nav button:hover { background: linear-gradient(115deg, var(--brand-coral), var(--brand-mauve)); }
+body.dark-mode .student-nav button { color: var(--brand-blush); background: #332b4b; border-color: #bd83b866; }
+body.dark-mode .student-list-avatar { background: linear-gradient(135deg, var(--brand-coral), var(--brand-mauve)); }
+body.dark-mode .student-list-details span { color: var(--brand-blush); }
+body.dark-mode .student-portal-header { background: linear-gradient(115deg, #302747, var(--brand-purple), #684a70); border-color: #bd83b888; }
+body.dark-mode .student-page > form:first-of-type { background: linear-gradient(120deg, #302747, var(--brand-purple) 58%, #684a70) !important; border-color: #f1916d99; }
+body.dark-mode .student-page .lookup-card { background: linear-gradient(135deg, #302747, var(--brand-purple), #684a70); border-color: #bd83b888; }
+body.dark-mode:has(#attendancePercentage) #attendancePercentage { background: conic-gradient(var(--brand-coral) var(--attendance-progress, 0%), #3b3151 0); }
+body.dark-mode:has(#attendancePercentage) #attendancePercentage::after { color: #fff; }
+body.dark-mode .results-locked, body.dark-mode .payment-notice { color: var(--brand-blush); background: linear-gradient(135deg, #4d3041, var(--brand-purple)); border-color: #f1916d99; }
+
 /* Attendance percentage ring */
 body:has(#attendancePercentage) #attendancePercentage { position: relative; display: grid; place-items: center; width: 156px; height: 156px; margin: 4px auto 26px; padding: 0; border-radius: 50%; color: transparent; background: conic-gradient(#4f7df3 var(--attendance-progress, 0%), #dbe5f5 0); box-shadow: 0 14px 32px #4f7df326; }
 body:has(#attendancePercentage) #attendancePercentage::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 1px #e0e8f5; }
