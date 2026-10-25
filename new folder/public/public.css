@@ -825,6 +825,26 @@ body.dark-mode .student-list-avatar { background: var(--brand-coral); }
 body.dark-mode .student-list-details span { color: var(--brand-blush); }
 body.dark-mode .student-nav button.active, body.dark-mode .student-nav button:hover { background: var(--brand-coral); }
 
+/* Balance section only — presentation changes; existing IDs and calculations stay intact */
+.balance-section { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: -8px; }
+.balance-card { position: relative; overflow: hidden; min-height: 166px; padding: 24px 25px 20px; border: 1px solid #dce5f0; border-top: 0; border-radius: 22px; background: #fff; box-shadow: 0 16px 34px #1f3a5f18; }
+.balance-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--balance-accent, #5AA9E6); }
+.balance-card::after { content: ""; position: absolute; width: 126px; height: 126px; right: -45px; top: -48px; border-radius: 50%; background: var(--balance-soft, #EAF4F4); opacity: .9; }
+.balance-card .balance-icon { position: relative; z-index: 1; display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 14px; border-radius: 13px; color: #fff; background: var(--balance-accent, #5AA9E6); font-size: 21px; font-weight: 900; box-shadow: 0 8px 17px #1f3a5f22; }
+.balance-card p, .balance-card h2, .balance-card small { position: relative; z-index: 1; }
+.balance-card p { color: #52677d; font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.balance-card h2 { margin: 11px 0 7px; color: #1F3A5F; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.055em; }
+.balance-card small { color: #71849a; font-size: 12px; }
+.balance-due { --balance-accent: #1F3A5F; --balance-soft: #EAF4F4; }
+.balance-paid { --balance-accent: #5AA9E6; --balance-soft: #e0f1ff; }
+.balance-remaining { --balance-accent: #BD83B8; --balance-soft: #F5D7DB; }
+body.dark-mode .balance-card { border-color: #40516b; background: #182943; box-shadow: 0 18px 38px #07101f77; }
+body.dark-mode .balance-card::after { opacity: .35; }
+body.dark-mode .balance-card p { color: #b8c9dc; }
+body.dark-mode .balance-card h2 { color: #fff; background: none; -webkit-text-fill-color: initial; }
+body.dark-mode .balance-card small { color: #9fb2c9; }
+@media (max-width: 760px) { .balance-section { grid-template-columns: 1fr; } .balance-card { min-height: 145px; } }
+
 /* Attendance percentage ring */
 body:has(#attendancePercentage) #attendancePercentage { position: relative; display: grid; place-items: center; width: 156px; height: 156px; margin: 4px auto 26px; padding: 0; border-radius: 50%; color: transparent; background: conic-gradient(#4f7df3 var(--attendance-progress, 0%), #dbe5f5 0); box-shadow: 0 14px 32px #4f7df326; }
 body:has(#attendancePercentage) #attendancePercentage::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 1px #e0e8f5; }
