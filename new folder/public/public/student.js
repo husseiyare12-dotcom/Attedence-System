@@ -63,12 +63,32 @@ function renderStudents(students) {
 
     students.forEach((student) => {
         const li = document.createElement("li");
-        li.textContent = `${student.name} - ${student.studentId} - ${student.email} `;
+        li.className = "student-list-card";
+        const avatar = document.createElement("div");
+        avatar.className = "student-list-avatar";
+        if (student.photo) {
+            const image = document.createElement("img");
+            image.src = student.photo;
+            image.alt = `${student.name} photo`;
+            avatar.appendChild(image);
+        } else {
+            avatar.textContent = (student.name || "?").trim().charAt(0).toUpperCase() || "?";
+        }
+        const details = document.createElement("div");
+        details.className = "student-list-details";
+        const name = document.createElement("strong");
+        name.textContent = student.name;
+        const meta = document.createElement("span");
+        meta.textContent = `${student.studentId} · ${student.className || "Class not provided"}`;
+        const email = document.createElement("small");
+        email.textContent = student.email || "No email provided";
+        details.append(name, meta, email);
         const button = document.createElement("button");
         button.type = "button";
         button.textContent = "View report";
+        button.className = "student-list-action";
         button.addEventListener("click", () => loadReport(student.studentId));
-        li.appendChild(button);
+        li.append(avatar, details, button);
         studentsList.appendChild(li);
     });
 }
@@ -83,7 +103,11 @@ async function loadReport(studentId) {
     photo.src = report.student.photo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect width='100%25' height='100%25' fill='%23dbeafe'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='36' fill='%231d4ed8'%3E%3F%3C/text%3E%3C/svg%3E";
     document.getElementById("reportProfile").textContent = `${report.student.name} | ID: ${report.student.studentId} | Email: ${report.student.email} | Class: ${report.student.className || "Not provided"} | Phone: ${report.student.phone || "Not provided"}`;
     document.getElementById("reportStudent").textContent = `${report.student.name} (${report.student.studentId})`;
-    document.getElementById("attendancePercentage").textContent = `Attendance percentage: ${report.attendancePercentage}%`;
+    const attendancePercentage = Math.max(0, Math.min(100, Number(report.attendancePercentage || 0)));
+    const attendanceRing = document.getElementById("attendancePercentage");
+    attendanceRing.textContent = `Attendance percentage: ${attendancePercentage}%`;
+    attendanceRing.dataset.percent = attendancePercentage;
+    attendanceRing.style.setProperty("--attendance-progress", `${attendancePercentage}%`);
     const balanceDue = Number(report.student.balanceDue || 0);
     const amountPaid = Number(report.student.amountPaid || 0);
     const remaining = Math.max(0, balanceDue - amountPaid);
