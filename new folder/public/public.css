@@ -691,6 +691,22 @@ body.dark-mode.student-page > ul#studentsList li:hover { background: #1d3153; tr
 body.dark-mode.student-page .lookup-card { border-radius: 22px; background: linear-gradient(135deg, #151f35, #1f3154 72%, #302454); box-shadow: 0 16px 36px #02061777; }
 body.dark-mode.student-page #studentReport > h2 { color: #bcd1ff; }
 
+/* Animated top face/banner shared by every main workspace */
+.animated-topbar { position: relative; display: flex; align-items: center; gap: 10px; width: min(100%, 1180px); min-height: 36px; margin: 0 auto 12px; padding: 9px 14px; overflow: hidden; border: 1px solid #dbe5f6; border-radius: 13px; color: #3157a7; background: linear-gradient(100deg, #eef4ff, #f6f1ff, #ecfbfb); box-shadow: 0 8px 22px #314b8310; font-size: 12px; font-weight: 800; letter-spacing: .02em; }
+.animated-topbar::after { content: ""; position: absolute; top: 0; left: -35%; width: 28%; height: 100%; transform: skewX(-18deg); background: linear-gradient(90deg, transparent, #ffffffaa, transparent); animation: bannerSweep 4.2s ease-in-out infinite; pointer-events: none; }
+.motion-spark { display: grid; place-items: center; width: 20px; height: 20px; flex: 0 0 auto; border-radius: 7px; color: #fff; background: linear-gradient(135deg, #4f7df3, #7257d9); box-shadow: 0 5px 12px #4f7df344; animation: sparkPulse 2s ease-in-out infinite; }
+.motion-copy { position: relative; z-index: 1; flex: 1; }
+.motion-change { animation: messageSlide .55s ease both; }
+.motion-count { color: #8190a9; font-size: 10px; letter-spacing: .12em; }
+@keyframes bannerSweep { 0%, 20% { left: -35%; } 75%, 100% { left: 125%; } }
+@keyframes sparkPulse { 50% { transform: rotate(12deg) scale(1.12); box-shadow: 0 7px 18px #4f7df366; } }
+@keyframes messageSlide { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+body.dark-mode .animated-topbar { border-color: #40557d; color: #c7d7ff; background: linear-gradient(100deg, #172640, #292151, #123a45); box-shadow: 0 10px 26px #02061766; }
+body.dark-mode .motion-count { color: #9cafd0; }
+body.dark-mode .animated-topbar::after { background: linear-gradient(90deg, transparent, #9dbbff2b, transparent); }
+@media (prefers-reduced-motion: reduce) { .animated-topbar::after, .motion-spark, .motion-change { animation: none !important; } }
+@media (max-width: 560px) { .animated-topbar { margin-bottom: 10px; } .motion-count { display: none; } }
+
 /* Professional student directory cards */
 body.student-page > ul#studentsList { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
 body.student-page > ul#studentsList li.student-list-card { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 17px; border-radius: 20px; }

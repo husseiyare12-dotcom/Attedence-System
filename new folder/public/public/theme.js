@@ -31,4 +31,42 @@
         localStorage.setItem(storageKey, nextTheme);
         applyTheme(nextTheme);
     });
+
+    function addAnimatedTopbar() {
+        const header = document.querySelector("main > header, .student-portal-header");
+        if (!header || document.querySelector(".animated-topbar")) return;
+        const banner = document.createElement("div");
+        banner.className = "animated-topbar";
+        banner.setAttribute("role", "status");
+        banner.setAttribute("aria-live", "polite");
+        banner.innerHTML = '<span class="motion-spark" aria-hidden="true">✦</span><span class="motion-copy"></span><span class="motion-count">01</span>';
+        header.insertAdjacentElement("beforebegin", banner);
+
+        const messages = [
+            "Track attendance with clarity",
+            "Build better student progress",
+            "Your school dashboard is live",
+            "Every record, organized beautifully"
+        ];
+        let index = 0;
+        let timer;
+        const copy = banner.querySelector(".motion-copy");
+        const count = banner.querySelector(".motion-count");
+
+        function showMessage(nextIndex) {
+            index = (nextIndex + messages.length) % messages.length;
+            copy.classList.remove("motion-change");
+            void copy.offsetWidth;
+            copy.textContent = messages[index];
+            count.textContent = String(index + 1).padStart(2, "0");
+            copy.classList.add("motion-change");
+        }
+        function start() { clearInterval(timer); timer = setInterval(() => showMessage(index + 1), 4200); }
+        showMessage(0);
+        start();
+        banner.addEventListener("mouseenter", () => { clearInterval(timer); showMessage(index + 1); });
+        banner.addEventListener("mouseleave", start);
+    }
+
+    addAnimatedTopbar();
 })();
