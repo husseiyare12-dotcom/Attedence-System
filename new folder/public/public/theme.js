@@ -64,9 +64,18 @@
         function start() { clearInterval(timer); timer = setInterval(() => showMessage(index + 1), 4200); }
         showMessage(0);
         start();
-        banner.addEventListener("mouseenter", () => { clearInterval(timer); showMessage(index + 1); });
-        banner.addEventListener("mouseleave", start);
+    banner.addEventListener("mouseenter", () => { clearInterval(timer); showMessage(index + 1); });
+    banner.addEventListener("mouseleave", start);
     }
 
     addAnimatedTopbar();
+
+    document.addEventListener("click", (event) => {
+        const button = event.target.closest("button");
+        if (!button) return;
+        button.classList.remove("button-clicked");
+        void button.offsetWidth;
+        button.classList.add("button-clicked");
+        window.setTimeout(() => button.classList.remove("button-clicked"), 420);
+    });
 })();
