@@ -785,6 +785,46 @@ body.dark-mode:has(#attendancePercentage) #attendancePercentage { background: co
 body.dark-mode:has(#attendancePercentage) #attendancePercentage::after { color: #fff; }
 body.dark-mode .results-locked, body.dark-mode .payment-notice { color: var(--brand-blush); background: linear-gradient(135deg, #4d3041, var(--brand-purple)); border-color: #f1916d99; }
 
+/* Refined brand balance: one strong base, one action color, two accents */
+body:not(.dark-mode) { background: var(--brand-blush) !important; }
+body:not(.dark-mode) main { background: linear-gradient(180deg, #fff 0%, #fffafb 82%, #f5d7db 100%); }
+body:not(.dark-mode) main::before { background: linear-gradient(115deg, #ffffff, #fff6f7 70%, transparent); }
+body:not(.dark-mode) .sidebar { background: linear-gradient(180deg, var(--brand-purple), #554a73 65%, var(--brand-purple)); }
+body:not(.dark-mode) .card, body:not(.dark-mode) .panel { background: #fff; border-color: #eadde5; box-shadow: 0 12px 32px #473e6614; }
+body:not(.dark-mode) .cards .card:nth-child(1) { border-top-color: var(--brand-coral); }
+body:not(.dark-mode) .cards .card:nth-child(2) { border-top-color: var(--brand-mauve); }
+body:not(.dark-mode) .cards .card:nth-child(3) { border-top-color: var(--brand-purple); }
+body:not(.dark-mode) .cards .card:nth-child(4) { border-top-color: var(--brand-coral); }
+body:not(.dark-mode) .card h2 { background: none; color: var(--brand-purple); }
+body:not(.dark-mode) .panel h2, body:not(.dark-mode) .panel h3 { color: var(--brand-purple); }
+body:not(.dark-mode) .button, body:not(.dark-mode) button { background: var(--brand-coral); }
+body:not(.dark-mode) button:hover { background: var(--brand-purple); }
+body:not(.dark-mode) .animated-topbar { background: #fff; border-color: #e5c9d7; color: var(--brand-purple); }
+body:not(.dark-mode) .student-page { background: linear-gradient(145deg, #fff, #fff7f8 65%, var(--brand-blush)) !important; }
+body:not(.dark-mode) .student-portal-header, body:not(.dark-mode) .student-nav, body:not(.dark-mode) .student-page .lookup-card { background: #fff; border-color: #e5c9d7; box-shadow: 0 14px 34px #473e6614; }
+body:not(.dark-mode) .student-portal-header h1 { background: none; color: var(--brand-purple); }
+body:not(.dark-mode) .student-page > form:first-of-type { background: var(--brand-purple) !important; border-color: var(--brand-mauve); }
+body:not(.dark-mode) .student-page > ul#studentsList li { background: #fff; border-color: #eadde5; }
+body:not(.dark-mode) .student-list-avatar { background: var(--brand-coral); }
+body:not(.dark-mode) .student-list-details span { color: var(--brand-purple); }
+body:not(.dark-mode) .student-nav button.active, body:not(.dark-mode) .student-nav button:hover { background: var(--brand-coral); }
+body.dark-mode { background: #29233e !important; }
+body.dark-mode main { background: linear-gradient(180deg, #29233e, #352c4c); }
+body.dark-mode .card, body.dark-mode .panel { background: #352c4c; border-color: #5b4d73; box-shadow: 0 14px 34px #17112599; }
+body.dark-mode .card h2 { background: none; color: var(--brand-blush); }
+body.dark-mode .panel h2, body.dark-mode .panel h3 { color: var(--brand-blush); }
+body.dark-mode button { background: var(--brand-coral); }
+body.dark-mode button:hover { background: var(--brand-mauve); }
+body.dark-mode .animated-topbar { background: #352c4c; border-color: #6c5b84; color: var(--brand-blush); }
+body.dark-mode .student-page { background: linear-gradient(145deg, #29233e, #352c4c) !important; }
+body.dark-mode .student-portal-header, body.dark-mode .student-nav, body.dark-mode .student-page .lookup-card { background: #352c4c; border-color: #6c5b84; }
+body.dark-mode .student-portal-header h1 { background: none; color: var(--brand-blush); }
+body.dark-mode .student-page > form:first-of-type { background: #473e66 !important; border-color: var(--brand-mauve); }
+body.dark-mode .student-page > ul#studentsList li { background: #403555; border-color: #655477; }
+body.dark-mode .student-list-avatar { background: var(--brand-coral); }
+body.dark-mode .student-list-details span { color: var(--brand-blush); }
+body.dark-mode .student-nav button.active, body.dark-mode .student-nav button:hover { background: var(--brand-coral); }
+
 /* Attendance percentage ring */
 body:has(#attendancePercentage) #attendancePercentage { position: relative; display: grid; place-items: center; width: 156px; height: 156px; margin: 4px auto 26px; padding: 0; border-radius: 50%; color: transparent; background: conic-gradient(#4f7df3 var(--attendance-progress, 0%), #dbe5f5 0); box-shadow: 0 14px 32px #4f7df326; }
 body:has(#attendancePercentage) #attendancePercentage::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 1px #e0e8f5; }
